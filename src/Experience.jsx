@@ -24,12 +24,21 @@ export default function Experience()
         <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
         <ambientLight intensity={ 0.5 } />
 
-        <mesh position-x={ - 2 }>
+        <mesh
+            position-x={ - 2 }
+            onClick={(e) => e.stopPropagation()} // this is useful to prevent the onClick of the cube form happening, e.g. if sphere infront of cube and don't want cube click event to fire in this case
+        >
             <sphereGeometry />
             <meshStandardMaterial color="orange" />
         </mesh>
 
-        <mesh ref={ cube } position-x={ 2 } scale={ 1.5 } onClick={ handleClick }>
+        <mesh
+            ref={ cube }
+            position-x={ 2 }
+            scale={ 1.5 }
+            onClick={ handleClick }
+            onPointerEnter={(e) => }
+        >
             <boxGeometry />
             <meshStandardMaterial color="mediumpurple" />
         </mesh>
