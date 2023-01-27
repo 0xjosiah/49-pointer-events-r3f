@@ -12,8 +12,9 @@ export default function Experience()
     })
 
     const handleClick = () => {
-        console.log(cube);
-        cube.current.material.color = { r: Math.random(), g: Math.random(), b: Math.random() }
+        // two diff ways to get random colo
+        // cube.current.material.color = { r: Math.random(), g: Math.random(), b: Math.random() } // mine
+        cube.current.material.color.set(`hsl(${Math.random() * 360}, 100%, 75%)`) // lesson
     }
 
     return <>
